@@ -25,6 +25,11 @@
         android:title="@string/phone_language"
         android:fragment="com.android.settings.localepicker.LocaleListEditor"/>
 
+    <Preference
+        android:key="button_settings"
+        android:title="@string/button_pref_title"
+        android:fragment="com.android.settings.gzosp.ButtonSettings" />
+
     <PreferenceCategory
         android:title="@string/keyboard_and_input_methods_category">
         <Preference
