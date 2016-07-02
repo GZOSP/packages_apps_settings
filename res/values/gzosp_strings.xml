@@ -20,4 +20,10 @@
     <string name="adb_enable_root">Rooted debugging</string>
     <string name="adb_enable_summary_root">Allow running Android debugging as root</string>
 
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+
+    <!-- Density category -->
+    <string name="density_category">Density options</string>
+
 </resources>
