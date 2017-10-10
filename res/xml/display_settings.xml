@@ -77,6 +77,11 @@
         android:key="density"
         android:title="@string/developer_smallest_width" />
 
+    <SwitchPreference
+        android:key="show_operator_name"
+        android:title="@string/show_operator_name_title"
+        android:summary="@string/show_operator_name_summary" />
+
     <Preference
         android:key="screensaver"
         android:title="@string/screensaver_settings_title"
