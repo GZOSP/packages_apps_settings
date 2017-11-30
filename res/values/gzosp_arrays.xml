@@ -21,9 +21,19 @@
         <!-- Do not translate. -->
         <item>@string/night_mode_yes</item>
         <!-- Do not translate. -->
+        <item>@string/night_mode_tesla</item>
+        <!-- Do not translate. -->
+        <item>@string/night_mode_tipsy</item>
+        <!-- Do not translate. -->
+        <item>@string/night_mode_validus</item>
+        <!-- Do not translate. -->
+        <item>@string/night_mode_retro</item>
+        <!-- Do not translate. -->
+        <item>@string/night_mode_mint</item>
+        <!-- Do not translate. -->
         <item>@string/night_mode_auto</item>
     </string-array>
- 
+
     <!-- These values should match up with the MODE_NIGHT constants in UiModeManager.
          Do not translate. -->
     <string-array name="night_mode_values" translatable="false">
@@ -31,6 +41,16 @@
         <item>1</item>
         <!-- Do not translate. -->
         <item>2</item>
+        <!-- Do not translate. -->
+        <item>3</item>
+        <!-- Do not translate. -->
+        <item>4</item>
+        <!-- Do not translate. -->
+        <item>5</item>
+        <!-- Do not translate. -->
+        <item>6</item>
+        <!-- Do not translate. -->
+        <item>7</item>
         <!-- Do not translate. -->
         <item>0</item>
     </string-array>
