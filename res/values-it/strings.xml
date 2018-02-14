@@ -2547,7 +2547,7 @@
     <string name="additional_system_update_settings_list_item_title" msgid="214987609894661992">"Aggiornamenti di sistema aggiuntivi"</string>
     <string name="selinux_status_disabled" msgid="924551035552323327">"Disattivato"</string>
     <string name="selinux_status_permissive" msgid="6004965534713398778">"Permissivo"</string>
-    <string name="selinux_status_enforcing" msgid="2252703756208463329">"Applicazione"</string>
+    <string name="selinux_status_enforcing" msgid="2252703756208463329">"Restrittivo"</string>
     <string name="ssl_ca_cert_warning" msgid="2045866713601984673">"La rete potrebbe essere monitorata"</string>
     <string name="done_button" msgid="1991471253042622230">"Fine"</string>
     <plurals name="ssl_ca_cert_dialog_title" formatted="false" msgid="7145092748045794650">
