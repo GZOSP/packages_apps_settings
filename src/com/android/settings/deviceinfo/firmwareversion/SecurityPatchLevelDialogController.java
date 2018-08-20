@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2018 CypherOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +20,21 @@ package com.android.settings.deviceinfo.firmwareversion;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 
 import com.android.settings.R;
 import com.android.settingslib.DeviceInfoUtils;
 import com.android.settingslib.wrapper.PackageManagerWrapper;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class SecurityPatchLevelDialogController implements View.OnClickListener {
 
@@ -43,12 +51,14 @@ public class SecurityPatchLevelDialogController implements View.OnClickListener 
     private final Context mContext;
     private final PackageManagerWrapper mPackageManager;
     private final String mCurrentPatch;
+    private final String mCurrentPatchOverride;
 
     public SecurityPatchLevelDialogController(FirmwareVersionDialogFragment dialog) {
         mDialog = dialog;
         mContext = dialog.getContext();
         mPackageManager = new PackageManagerWrapper(mContext.getPackageManager());
         mCurrentPatch = DeviceInfoUtils.getSecurityPatch();
+        mCurrentPatchOverride = getSecurityPatchOverride();
     }
 
     @Override
@@ -70,17 +80,35 @@ public class SecurityPatchLevelDialogController implements View.OnClickListener 
      * Populates the security patch level field in the dialog and registers click listeners.
      */
     public void initialize() {
-        if (TextUtils.isEmpty(mCurrentPatch)) {
+        if (TextUtils.isEmpty(mCurrentPatch) && TextUtils.isEmpty(mCurrentPatchOverride)) {
             mDialog.removeSettingFromScreen(SECURITY_PATCH_LABEL_ID);
             mDialog.removeSettingFromScreen(SECURITY_PATCH_VALUE_ID);
             return;
         }
         registerListeners();
-        mDialog.setText(SECURITY_PATCH_VALUE_ID, mCurrentPatch);
+        mDialog.setText(SECURITY_PATCH_VALUE_ID,
+                TextUtils.isEmpty(mCurrentPatchOverride) ? mCurrentPatch : mCurrentPatchOverride);
     }
 
     private void registerListeners() {
         mDialog.registerClickListener(SECURITY_PATCH_LABEL_ID, this /* listener */);
         mDialog.registerClickListener(SECURITY_PATCH_VALUE_ID, this /* listener */);
+    }
+
+    public static String getSecurityPatchOverride() {
+        String patchOverride = Build.LUNA.SECURITY_PATCH_OVERRIDE;
+        if (!"".equals(patchOverride)) {
+            try {
+                SimpleDateFormat template = new SimpleDateFormat("yyyy-MM-dd");
+                Date patchDate = template.parse(patchOverride);
+                String format = DateFormat.getBestDateTimePattern(Locale.getDefault(), "dMMMMyyyy");
+                patchOverride = DateFormat.format(format, patchDate).toString();
+            } catch (ParseException e) {
+                // broken parse; fall through and use the raw string
+            }
+            return patchOverride;
+        } else {
+            return null;
+        }
     }
 }
