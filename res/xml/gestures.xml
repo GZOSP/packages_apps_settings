@@ -69,4 +69,10 @@
         android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
         settings:controller="com.android.settings.gestures.PreventRingingPreferenceController" />
 
+    <Preference
+        android:key="gesture_settings"
+        android:icon="@drawable/ic_settings_gestures_omni"
+        android:title="@string/gesture_settings_title"
+        android:fragment="com.android.settings.gestures.GestureSettings" />
+
 </PreferenceScreen>
