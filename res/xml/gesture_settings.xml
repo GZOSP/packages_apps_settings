@@ -19,9 +19,15 @@
         android:title="@string/gesture_settings_title" >
 
     <com.android.settings.gzosp.SystemSettingSwitchPreference
-            android:key="use_bottom_gesture_navigation"
-            android:title="@string/use_bottom_gesture_title"
-            android:summary="@string/use_bottom_gesture_summary"
-            android:defaultValue="false" />
+        android:key="three_finger_gesture"
+        android:title="@string/three_finger_gesture"
+        android:summary="@string/three_finger_gesture_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.gzosp.SystemSettingSwitchPreference
+        android:key="use_bottom_gesture_navigation"
+        android:title="@string/use_bottom_gesture_title"
+        android:summary="@string/use_bottom_gesture_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
