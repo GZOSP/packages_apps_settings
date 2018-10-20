@@ -74,4 +74,5 @@
         android:title="@string/gesture_settings_title"
         android:fragment="com.android.settings.gzosp.GestureSettings" />
 
+
 </PreferenceScreen>
