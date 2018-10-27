@@ -89,4 +89,8 @@
     <string name="battery_image">Battery image</string>
     <string name="battery_image_description">Show battery image in status bar</string>
 
+    <!-- Network traffic -->
+    <string name="network_traffic_state_title">Show network traffic in statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Network traffic autohide (KB/s)</string>
+
 </resources>

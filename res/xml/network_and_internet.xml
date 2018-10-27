@@ -48,6 +48,24 @@
             android:targetClass="com.android.phone.MobileNetworkSettings" />
     </com.android.settingslib.RestrictedPreference>
 
+    <!-- Show Network Traffic State on Statusbar -->
+    <com.android.settings.gzosp.SystemSettingSwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_state_title"
+        android:icon="@drawable/ic_network_traffic"
+        android:order="-10"
+        android:defaultValue="false" />
+
+    <com.android.settings.preference.CustomSeekBarPreference
+        android:key="network_traffic_autohide_threshold"
+        android:title="@string/network_traffic_autohide_threshold_title"
+        android:order="-9"
+        android:max="100"
+        settings:min="0"
+        settings:units=""
+        android:defaultValue="1"
+        android:dependency="network_traffic_state" />
+
     <com.android.settingslib.RestrictedPreference
         android:fragment="com.android.settings.TetherSettings"
         android:key="tether_settings"
