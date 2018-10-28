@@ -93,4 +93,10 @@
     <string name="network_traffic_state_title">Show network traffic in statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Network traffic autohide (KB/s)</string>
 
+    <!-- SElinux status in About -->
+    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
+
 </resources>
