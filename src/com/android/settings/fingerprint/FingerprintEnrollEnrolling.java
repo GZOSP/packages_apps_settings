@@ -30,8 +30,12 @@ import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.hardware.fingerprint.FingerprintManager;
+import android.hardware.fingerprint.IFingerprintService;
+import android.hardware.fingerprint.IFingerprintService.Stub;
 import android.media.AudioAttributes;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -40,6 +44,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -55,6 +60,7 @@ import com.android.settings.password.ChooseLockSettingsHelper;
 public class FingerprintEnrollEnrolling extends FingerprintEnrollBase
         implements FingerprintEnrollSidecar.Listener {
 
+    private static final String TAG = "FingerprintEnrollEnrolling";
     static final String TAG_SIDECAR = "sidecar";
 
     private static final int PROGRESS_BAR_MAX = 10000;
@@ -146,6 +152,36 @@ public class FingerprintEnrollEnrolling extends FingerprintEnrollBase
             }
         });
         mRestoring = savedInstanceState != null;
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (!isFinishing()) {
+            changeEnrollStateByFocusChanged(hasFocus);
+        }
+    }
+
+    private void changeEnrollStateByFocusChanged(boolean hasFocus) {
+        IFingerprintService ifp = Stub.asInterface(ServiceManager.getService("fingerprint"));
+        if (ifp != null) {
+            int state;
+            if (hasFocus) {
+                state = 8;
+            } else {
+                state = 9;
+            }
+            try {
+                ifp.updateStatus(state);
+                Log.w(TAG, "changeEnrollStateByFocusChanged ");
+            } catch (RemoteException e) {
+                String str = TAG;
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("updateStatus , ");
+                stringBuilder.append(e);
+                Log.w(str, stringBuilder.toString());
+            }
+        }
     }
 
     @Override
