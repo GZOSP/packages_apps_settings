@@ -60,4 +60,8 @@
     <string name="lockscreen_media_blur_title">Media art blur level</string>
     <string name="show_lockscreen_media_art_title">Show media art</string>
     <string name="lockscreen_media_art_options_title">Lockscreen media art</string>
+
+    <string name="doubletap_lockscreen_screen_title">Switch screen off</string>
+    <string name="doubletap_lockscreen_title">Double tap to sleep on losckreen</string>
+    <string name="doubletap_lockscreen_summary">Double tap on lockscreen empty areas to switch the screen off</string>
 </resources>
