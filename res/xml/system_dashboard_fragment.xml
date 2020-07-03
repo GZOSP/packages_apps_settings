@@ -21,6 +21,11 @@
     android:title="@string/header_category_system"
     settings:initialExpandedChildrenCount="4">
 
+    <Preference 
+        android:key="gzosp_logo"
+        android:order="-500"
+        android:layout="@layout/system_animation" />
+
     <Preference
         android:key="language_input_settings"
         android:title="@string/language_settings"
