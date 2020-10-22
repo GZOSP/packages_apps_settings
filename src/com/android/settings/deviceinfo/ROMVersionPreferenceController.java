@@ -28,7 +28,7 @@ import com.android.settingslib.core.AbstractPreferenceController;
 public class ROMVersionPreferenceController extends AbstractPreferenceController implements
         PreferenceControllerMixin {
 
-    private static final String PROPERTY_GZOSP_VERSION = "ro.gzosp.version";
+    private static final String PROPERTY_GZOSP_VERSION = "ro.mod.version";
     private static final String KEY_GZOSP_VERSION = "modversion";
 
     public ROMVersionPreferenceController(Context context) {
