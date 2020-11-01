@@ -14,7 +14,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- GZOSP version in About phone -->
-    <string name="rom_version_title">GZOSP version</string>
+    <string name="gzosp_version">GZOSP version</string>
+    <string name="summary_placeholder">N/A</string>
+    <string name="gzosp_vendor_security_patch">Vendor security patch level</string>
 
     <!-- Android debugging as root -->
     <string name="adb_enable_root">Rooted debugging</string>
