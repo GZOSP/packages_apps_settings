@@ -82,4 +82,14 @@
     <string name="network_traffic_state_title">Enable network monitor</string>
     <string name="network_traffic_state_summary">Show net activity in expanded statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+
+    <!-- Lockscreen clock style -->
+    <string name="lockscreen_clock_title">Lockscreen clock</string>
+    <string name="lockscreen_clock_summary">Style of the clock in lockscreen and Ambient display</string>
+    <string name="lockscreen_clock_dialog_title">Select clock style</string>
+    <string name="lockscreen_clock_hide">Hide</string>
+    <string name="lockscreen_clock_default">Default</string>
+    <string name="lockscreen_clock_default_bold">Default (bold)</string>
+    <string name="lockscreen_clock_sammy">Sammy</string>
+    <string name="lockscreen_clock_sammy_bold">Sammy (bold)</string>
 </resources>
