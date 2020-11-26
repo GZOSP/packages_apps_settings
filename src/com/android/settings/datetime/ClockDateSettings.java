@@ -259,7 +259,7 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.GZOSP;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
