@@ -123,7 +123,7 @@ public class StatusBarBatterySettings extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.GZOSP;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

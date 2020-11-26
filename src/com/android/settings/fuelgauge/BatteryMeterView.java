@@ -121,11 +121,6 @@ public class BatteryMeterView extends ImageView {
         return mThemedDrawable.getPowerSaveEnabled();
     }
 
-    public int getBatteryLevel() {
-        return mLevel;
-        return mThemedDrawable.getPowerSaveEnabled();
-    }
-
     public void setCharging(boolean charging) {
         mCircleDrawable.setCharging(charging);
         mFullCircleDrawable.setCharging(charging);
