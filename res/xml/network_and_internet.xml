@@ -123,10 +123,18 @@
         android:positiveButtonText="@string/save"
         android:negativeButtonText="@android:string/cancel" />
 
+    <Preference
+        android:fragment="com.android.settings.network.AdaptiveConnectivitySettings"
+        android:key="adaptive_connectivity"
+        android:title="@string/adaptive_connectivity_title"
+        android:summary="@string/summary_placeholder"
+        android:order="25"
+        settings:controller="com.android.settings.network.AdaptiveConnectivityPreferenceController"/>
+
     <PreferenceCategory
         android:key="net_monitor_category"
         android:title="@string/net_monitor_category_title"
-        android:order="25" >
+        android:order="30" >
         <com.gzosp.support.preferences.SystemSettingSwitchPreference
             android:key="network_traffic_state"
             android:title="@string/network_traffic_state_title"
