@@ -149,4 +149,11 @@
     <string name="clock_date_position">Date position</string>
     <string name="status_bar_clock_hide_on_home_title">Hide on Home</string>
     <string name="status_bar_clock_hide_on_home_summary">Hide clock when Home is showing</string>
+
+    <!-- Horizon Light -->
+    <string name="pulse_ambient_light_title">Edge notifications</string>
+    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="ambient_notification_light_accent_title">System accent color</string>
+    <string name="ambient_notification_light_color_automatic_title">Notification color</string>
+    <string name="pulse_ambient_light_color">When pulsing, use</string>
 </resources>
